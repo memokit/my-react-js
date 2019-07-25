@@ -28,18 +28,19 @@
 
         let country = "Thailand";
 
-        let Hello = (props) => {
-            console.log(props.textColor);
+        class Hello extends React.Component {
+            render() {
 
-            let styleObj = {
-                color: props.textColor
+                let styleObj = {
+                    color: this.props.textColor
+                } 
+
+                return (
+                    <>
+                        <h1 id="header" style={styleObj}>Hello {this.props.name}</h1>
+                    </>
+                )
             }
-            
-            return (
-                <>
-                    <h1 id="header" style={styleObj}>Hello {props.name}</h1>
-                </>
-            )
         }
 
         let LoginForm = () => {
