@@ -45,14 +45,28 @@
 
         class LoginForm extends React.Component {
             render() {
+                let showForgetPassword = this.props.showForgetPassword;
+                console.log(showForgetPassword);
+
+                let forgetPasswordLink = (
+                    <a href="/">Forget Password </a>
+                )
+
+                if (showForgetPassword == 'false') {
+                    forgetPasswordLink = (<div></div>)
+                }
+                
                 return (
-                    <form action="" method="get">
-                        <label htmlFor="">Username</label>
-                        <input type="text" name="" id="" />
-                        <label htmlFor="">Password</label>
-                        <input type="text"  name="" id="" />
-                        <button type="button">Submit</button>
-                    </form>
+                    <>
+                        <form action="" method="get">
+                            <label htmlFor="">Username</label>
+                            <input type="text" name="" id="" />
+                            <label htmlFor="">Password</label>
+                            <input type="text"  name="" id="" />
+                            <button type="button">Submit</button>
+                        </form>
+                        {forgetPasswordLink}
+                    </>
                 )
             }
         }
@@ -61,7 +75,7 @@
             (
                 <>
                     <Hello name="Indy" textColor="green"/>
-                    <LoginForm />
+                    <LoginForm showForgetPassword="false"/>
                 </>
             ),
             document.getElementById("root")
