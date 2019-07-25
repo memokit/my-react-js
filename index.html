@@ -43,9 +43,9 @@
             }
         }
 
-        let LoginForm = () => {
-            return (
-                <div>
+        class LoginForm extends React.Component {
+            render() {
+                return (
                     <form action="" method="get">
                         <label htmlFor="">Username</label>
                         <input type="text" name="" id="" />
@@ -53,8 +53,8 @@
                         <input type="text"  name="" id="" />
                         <button type="button">Submit</button>
                     </form>
-                </div>
-            )
+                )
+            }
         }
 
         ReactDOM.render (
