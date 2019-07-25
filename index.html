@@ -28,11 +28,17 @@
 
         let country = "Thailand";
 
-        let Hello = () => {
+        let Hello = (props) => {
+            console.log(props.textColor);
+
+            let styleObj = {
+                color: props.textColor
+            }
+            
             return (
-                <div>
-                    <h1 id="header" className="orange">Hello {country}</h1>
-                </div>
+                <>
+                    <h1 id="header" style={styleObj}>Hello {props.name}</h1>
+                </>
             )
         }
 
@@ -53,7 +59,7 @@
         ReactDOM.render (
             (
                 <>
-                    <LoginForm />
+                    <Hello name="Indy" textColor="green"/>
                     <LoginForm />
                 </>
             ),
